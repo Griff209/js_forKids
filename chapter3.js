@@ -1,10 +1,7 @@
-//adapted from insult generator challenge
-//I opted for string interpolation over the suggestions below, but for the sake of completeness
-//compliment =  [name, "your", quality, "makes", "me", feel, like, adjective, noun].join(" ");
-//compliment=  name + "your" + quality + "makes me feel like" + adjective + noun;
+//Adapted from JavaScript for Kids, Chapter 3 Programming Challenges
 
 function complimentGenerator() {
-  //store globals in their own object to avoid name clashes - could also use let or const
+  //store globals in their own object to avoid name clashes - could also use let in the lower functions, const here
   var globals = {};
   globals.unused = {quality: ["sense of humor", "kindness", "curiosity", "charm", "manners", "intelligence", "quick wit"],
             adjective: ["bright", "warm", "a fresh", "the world's greatest", "superlative", "my favorite", "the best"],
@@ -16,7 +13,7 @@ function complimentGenerator() {
     return array[index];
   }
   
-  function rmvKey(key) {
+  function remove(key) {
     return key != this;
   }
   //main function
@@ -34,9 +31,9 @@ function complimentGenerator() {
       }
      compliment = `${name}, your ${quality} makes me feel like ${adjective} ${noun}`;
      window.alert(compliment);
-     unused.quality = unused.quality.filter(rmvKey, quality);
-     unused.adjective = unused.adjective.filter(rmvKey, adjective);
-     unused.noun = unused.noun.filter(rmvKey, noun);
+     unused.quality = unused.quality.filter(remove, quality);
+     unused.adjective = unused.adjective.filter(remove, adjective);
+     unused.noun = unused.noun.filter(remove, noun);
      buildCompliment(name, unused, used);
     }
   };
