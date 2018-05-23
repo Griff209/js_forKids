@@ -27,7 +27,7 @@
     noun = pick(unused.noun);
     if(window.confirm("Care for a compliment?")) {
       if((name === null) || (name === "Friend")) {
-        name = window.prompt("Howdy. What's your name?", "Friend");
+        name = window.prompt("What shall I call you?", "Friend");
       }
      compliment = `${name}, your ${quality} makes me feel like ${adjective} ${noun}`;
      window.alert(compliment);
