@@ -34,7 +34,7 @@
      unused.quality = unused.quality.filter(remove, quality);
      unused.adjective = unused.adjective.filter(remove, adjective);
      unused.noun = unused.noun.filter(remove, noun);
-     buildCompliment(name, unused, used);
+     buildCompliment(name, unused);
     }
   };
   buildCompliment("Friend", Object.assign({}, globals.unused));
