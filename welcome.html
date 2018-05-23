@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fun with Digijan</title>
+</head>
+<body>
+  <canvas id="canvas" width="200" height="200"></canvas>
+  <script src="compliments.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+  var canvas = document.getElementById("canvas");
+  var context = canvas.getContext("2d");
+  function circle(x, y, rad) {
+      context.beginPath();
+      context.arc(x, y, rad, 0, Math.PI * 2, false);
+      context.stroke();
+    }
+  (function theJan() {
+    $("body").append(`<button type='button' id='complimenter'> Click for compliments </button>`);
+    $("#complimenter").click(complimentGenerator);
+    context.lineWidth = 2;
+    //head
+    circle(100, 50, 20);
+    //eyes
+    circle(107, 45, 1);
+    circle(93, 45, 1);
+    //mouth
+    context.beginPath();
+    context.arc(100, 55, 10, 0, Math.PI, false);
+    //body
+    context.moveTo(100, 70);
+    context.lineTo(100, 170);
+    //legs
+    context.lineTo(70, 200);
+    context.moveTo(100, 170);
+    context.lineTo(130, 200);
+    //arms
+    context.moveTo(100, 120);
+    context.lineTo(70, 140);
+    context.moveTo(100, 120);
+    context.lineTo(130, 70);
+    context.stroke();
+  })();
+</script>
+</body>
+</html>

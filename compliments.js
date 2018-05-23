@@ -1,6 +1,6 @@
 //Adapted from JavaScript for Kids, Chapter 3 Programming Challenges
 
-(function complimentGenerator() {
+function complimentGenerator() {
   //store globals in their own object to avoid name clashes - could also use let in the lower functions, const here
   var globals = {};
   globals.unused = {quality: ["sense of humor", "kindness", "curiosity", "charm", "manners", "intelligence", "quick wit"],
@@ -19,6 +19,8 @@
   //main function
   function buildCompliment(name = "Friend", unused) {
     var quality, adjective, noun, compliment;
+    //quality, adjective, and noun are of equal length 
+    //quality.length of 0 means we've exhausted the options: reset
     if (unused.quality.length === 0) {
       unused = Object.assign({}, globals.unused);
     }
@@ -38,4 +40,4 @@
     }
   };
   buildCompliment("Friend", Object.assign({}, globals.unused));
-})();
+};
