@@ -17,7 +17,7 @@
     return key != this;
   }
   //main function
-  function buildCompliment(name = "Friend", unused, used) {
+  function buildCompliment(name = "Friend", unused) {
     var quality, adjective, noun, compliment;
     if (unused.quality.length === 0) {
       unused = Object.assign({}, globals.unused);
