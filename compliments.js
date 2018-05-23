@@ -28,8 +28,17 @@ function complimentGenerator() {
     adjective = pick(unused.adjective);
     noun = pick(unused.noun);
     if(window.confirm("Care for a compliment?")) {
-      if((name === null) || (name === "Friend")) {
+      if (name === "Friend") {
         name = window.prompt("What shall I call you?", "Friend");
+      }
+      while (name === null) {
+        var sure = window.confirm("Are you sure you care for a compliment?");
+        if (sure) {
+          name = window.prompt("What shall I call you?", "Friend");
+        }
+        if (!sure) {
+          return window.alert("Ok, let me know if you change your mind");
+        }
       }
      compliment = `${name}, your ${quality} makes me feel like ${adjective} ${noun}`;
      window.alert(compliment);

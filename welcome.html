@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fun with Digijan</title>
+  <style>
+    canvas {
+      margin: auto;
+      margin-top: 100px;
+      display: block;
+    }
+    #complimenter {
+      margin: auto;
+      display: block;
+      margin-top: 10px;
+    }
+    </style>
+  <title>Fun with Stick Man</title>
 </head>
 <body>
   <canvas id="canvas" width="200" height="200"></canvas>
@@ -16,7 +28,7 @@
       context.stroke();
     }
   (function theJan() {
-    $("body").append(`<button type='button' id='complimenter'> Click for compliments </button>`);
+    $("body").append(`<button type='button' id='complimenter'> Hi, I'm the stick man. Click for compliments! </button>`);
     $("#complimenter").click(complimentGenerator);
     context.lineWidth = 2;
     //head
