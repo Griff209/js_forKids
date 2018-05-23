@@ -1,6 +1,6 @@
 //Adapted from JavaScript for Kids, Chapter 3 Programming Challenges
 
-function complimentGenerator() {
+(function complimentGenerator() {
   //store globals in their own object to avoid name clashes - could also use let in the lower functions, const here
   var globals = {};
   globals.unused = {quality: ["sense of humor", "kindness", "curiosity", "charm", "manners", "intelligence", "quick wit"],
@@ -38,5 +38,4 @@ function complimentGenerator() {
     }
   };
   buildCompliment("Friend", Object.assign({}, globals.unused));
-} 
-complimentGenerator();
+})();
