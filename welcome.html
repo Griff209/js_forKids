@@ -20,6 +20,8 @@
   <script src="compliments.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script>
+  $("body").append(`<button type='button' id='complimenter'> Hi, I'm the stick man. Click for compliments! </button>`);
+  $("#complimenter").click(complimentGenerator);
   var canvas = document.getElementById("canvas");
   var context = canvas.getContext("2d");
   function circle(x, y, rad) {
@@ -27,9 +29,7 @@
       context.arc(x, y, rad, 0, Math.PI * 2, false);
       context.stroke();
     }
-  (function theJan() {
-    $("body").append(`<button type='button' id='complimenter'> Hi, I'm the stick man. Click for compliments! </button>`);
-    $("#complimenter").click(complimentGenerator);
+  (function theMan() {
     context.lineWidth = 2;
     //head
     circle(100, 50, 20);
